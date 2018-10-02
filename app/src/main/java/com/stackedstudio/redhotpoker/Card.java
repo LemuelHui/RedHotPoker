@@ -31,6 +31,28 @@ public class Card {
         return getNumber().toString() + " of " + getSuit().toString();
     }
 
+    /**
+     * This function checks whether the number and suit for two cards is the same.
+     * @param obj The other card to compare to the current card.
+     * @return True if the number and suit is the same and false, if otherwise.
+     */
+    @Override
+    public boolean equals(Object obj) {
+        // These checks ensure that this function behaves as expected.
+        if (obj == null) {
+            return false;
+        }
+
+        if (!Card.class.isAssignableFrom(obj.getClass())) {
+            return false;
+        }
+
+        final Card otherCard = (Card) obj;
+
+        return this.getNumber().equals(otherCard.getNumber()) &&
+                this.getSuit().equals(otherCard.getSuit());
+    }
+
     enum Numbers {
         ACE {
             @NonNull
