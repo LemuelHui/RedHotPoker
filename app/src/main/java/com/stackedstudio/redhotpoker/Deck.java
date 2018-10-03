@@ -51,6 +51,12 @@ public class Deck {
         Collections.shuffle(cards, new Random(seed));
     }
 
+    /**
+     * This function returns an array of cards that are dealt.
+     * @param numberOfCards Number of cards to deal. It cannot be less than or zero and there must
+     *                      enough cards left in the deck.
+     * @return An array of cards that are dealt.
+     */
     ArrayList<Card> dealCards(int numberOfCards) {
         // These checks protect the deck from invalid inputs.
         if (numberOfCards <= 0) {
